@@ -1,0 +1,77 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}            
+
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.signup-btn {
+  padding: 6px 12px;
+  color: white;
+  background-color: #2563eb;
+  border-radius: 15px;
+}
+
+.login-btn {
+  padding: 6px 12px;
+  color: white;
+  background-color: #2563eb;
+  border-radius: 15px;
+}
+
+
+.hero{
+    align-items: center;
+    padding-left: 45px;
+    width: 50px;
+}
+
+.hero-img{
+    max-width: 1000px;
+    height: auto;
+    margin-top: 35px;
+    margin-left: 95px;
+    align-items: center;
+}
+
+.container{
+    align-items: center;
+    margin-left: 320px;
+}
+
+.team{
+    margin-top : 80px;
+}
+
+.team h2{
+    align-items: center;
+    margin-left: 600px
+}
+
+.team-cards{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.card img{
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.footer {
+  background-color: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
