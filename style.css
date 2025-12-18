@@ -75,3 +75,15 @@
   text-align: center;
   padding: 20px;
 }
+
+.audio{
+  border-radius: 20%;
+  border-color: rgb(8, 6, 3);
+  box-shadow : 20%;
+}
+
+.video{
+  border-color: black;
+  border-radius: 5%;
+  background-color: #0f172a;
+}
