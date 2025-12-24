@@ -1,0 +1,143 @@
+body{
+    background-color: #b2bbd3;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}  
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.signup-btn {
+  padding: 6px 12px;
+  color: white;
+  background-color: #2563eb;
+  border-radius: 15px;
+}
+
+.signup-btn:hover{
+    padding: 6px 12px;
+    border-radius: 15px;
+    color: #2563eb;
+    background-color: white;
+}
+
+.login-btn {
+  padding: 6px 12px;
+  color: white;
+  background-color: #2563eb;
+  border-radius: 15px;
+}
+
+.login-btn:hover{
+    padding: 6px 12px;
+    border-radius: 15px;
+    color: #2563eb;
+    background-color: white;
+}
+
+.request{
+  padding: 6px 12px;
+  color: white;
+  background-color: #2563eb;
+  border-radius: 15px;
+}
+
+.request:hover{
+    padding: 6px 12px;
+    border-radius: 15px;
+    color: #2563eb;
+    background-color: white;
+}
+
+.services{
+  padding: 6px 12px;
+  color: white;
+  background-color: #2563eb;
+  border-radius: 15px;
+}
+
+.services:hover{
+    padding: 6px 12px;
+    border-radius: 15px;
+    color: #2563eb;
+    background-color: white;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.card{
+    background-color: white;
+    width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    color: black;
+}
+
+form label{
+    width: 180px;
+}
+
+form input{
+    width: 230px;
+    padding: 8px 10px;
+}
+
+.card h2{
+    text-align: center;
+    margin-bottom: 30px;
+    color:rgb(98, 79, 116)
+
+}
+
+.card input {
+    border-radius: 3px;
+    border : 1px solid #94a3b8;
+    transition: border 0.2s, box-shadow 0,2s;
+}
+
+.btn{
+    padding : 6px 12px;
+    color: white;
+    background-color: #2563eb;
+    border : 1px solid #9cacaf;
+    border-radius: 15px;
+    margin-left:130px;
+    cursor: pointer;
+    margin-top:8px
+}
+
+.btn:hover{
+    padding: 6px 12px;
+    color: #2563eb;
+    background-color: white;
+    border-radius: 15px;
+    margin-left: 130px;
+}
+
+.login-text{
+    text-align: center;
+    font-size:14px;
+    margin-top:10px;
+}

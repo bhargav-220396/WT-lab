@@ -1,0 +1,176 @@
+body{
+  color:#f9fafb;
+  text-shadow:0 2px 6px rgba(0, 0, 0, 0.75);;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}            
+
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.signup-btn {
+  padding: 6px 12px;
+  color: white;
+  background-color: #2563eb;
+  border-radius: 15px;
+}
+
+.login-btn {
+  padding: 6px 12px;
+  color: white;
+  background-color: #2563eb;
+  border-radius: 15px;
+}
+
+.request{
+  padding: 6px 12px;
+  color: white;
+  background-color: #2563eb;
+  border-radius: 15px;
+}
+
+.services{
+  padding: 6px 12px;
+  color: white;
+  background-color: #2563eb;
+  border-radius: 15px;
+}
+
+
+.hero{
+    align-items: center;
+    padding-left: 45px;
+    width: 50px;
+}
+
+.hero-img{
+    max-width: 1000px;
+    height: auto;
+    margin-top: 35px;
+    margin-left: 95px;
+    align-items: center;
+}
+
+.container{
+    align-items: center;
+    margin-left: 320px;
+}
+
+.team{
+    margin-top : 80px;
+}
+
+.team h2{
+    align-items: center;
+    margin-left: 600px
+}
+
+.team-cards{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.card img{
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.footer {
+  background-color: #0f172a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.audio{
+  border-radius: 20%;
+  border-color: rgb(8, 6, 3);
+  box-shadow : 20%;
+}
+
+.video{
+  border-color: black;
+  border-radius: 5%;
+  background-color: #0f172a;
+}
+
+.bg-video{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* media queries */
+@media (max-width:768px) {
+  .navbar{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .nav-links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a{
+    margin: 6px;
+  }
+
+  .hero-img{
+    max-width: 90%;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .container {
+    margin-left: 0;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .team h2 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .team-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width:1024px){
+  .hero-img {
+    max-width: 80%;
+    margin-left: 0;
+  }
+
+  .container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .team h2 {
+    margin-left: 0;
+    text-align: center;
+  }
+}
