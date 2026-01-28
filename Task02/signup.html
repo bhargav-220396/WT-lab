@@ -23,21 +23,21 @@
     <div class="container">
         <div class="card">
             <h2>Create a TechBridge account</h2>
-            <form>
+            <form action="signup.php" method="POST">
                 <label for="username">Enter Username : </label>
-                <input id="username" type="text"/>
+                <input id="username" type="text" name="username"/>
                 <br><br>
                 <label for="password">Enter Password : </label>
-                <input id="password" type="password">
+                <input id="password" type="password" name="password">
                 <br><br>
                 <label for="checkpassword">Check Password : </label>
-                <input id="checkpassword" type="password" placeholder="enter you password again"/>
+                <input id="checkpassword" type="password" placeholder="enter you password again" name="confirm_password"/>
                 <br><br>
                 <label for="Need">Required service : </label>
-                <input id="Need" type="text"/>
+                <input id="Need" type="text" name="service"/>
                 <br><br>
                 <label for="budget">Enter Budget : </label>
-                <input id="budget" type="number" placeholder="enter your budget range"/>
+                <input id="budget" type="number" placeholder="enter your budget range" name="budget"/>
                 <br><br>
                 <button class="btn">Create Account</button>
                 <p class="login-text">
