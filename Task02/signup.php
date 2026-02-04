@@ -1,23 +1,39 @@
 <?php
 include "db.php";
 
-// run code ONLY if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // 1. Get form data safely
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
-    $confirm_password = $_POST['confirm_password'] ?? '';
-    $service = $_POST['service'] ?? '';
-    $budget = $_POST['budget'] ?? '';
+    $username = trim($_POST['username']) ?? '';
 
-    // 2. Validate
+    $password = $_POST['password'] ?? '';
+
+    $confirm_password = $_POST['confirm_password'] ?? '';
+
+    $service = trim($_POST['service']) ?? '';
+
+    $budget = trim($_POST['budget']) ?? '';
+
+    //validating the userame by using strlen function
+    if (strlen($username) < 3) {
+        die("Username must be at least 3 characters long");
+    }
+
+    if (strlen($password) < 6) {
+        die("Password must be at least 6 characters long");
+    }
+
+    $username = strtolower($username);
+    $username = ucwords($username);
+
+    $username = htmlspecialchars($username);
+    $service = htmlspecialchars($service);
+
+
     if ($password !== $confirm_password) {
         echo "Passwords do not match";
         exit;
     }
 
-    // 3. Hash password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // 4. Insert into database
