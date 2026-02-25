@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-require __DIR__ . '/vendor/autoload.php';
-require "db.php";   // connect MongoDB
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../config/db.php';   // connect MongoDB
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
 $client = new Google_Client();
@@ -39,7 +39,7 @@ if (isset($_GET['code'])) {
             'service'    => null,
             'budget'     => null,
             'provider'   => 'google',
-            'createdAt'  => new MongoDB\BSON\UTCDateTime()
+            'createdAt'  => new MongoDB\\BSON\\UTCDateTime()
         ]);
 
         $mongoUserId = (string) $insertResult->getInsertedId();
@@ -54,7 +54,7 @@ if (isset($_GET['code'])) {
     $_SESSION['username'] = $name;
     $_SESSION['email'] = $email;
 
-    header("Location: dashboard.php");
+    header("Location: /user/dashboard.php");
     exit();
 }
 

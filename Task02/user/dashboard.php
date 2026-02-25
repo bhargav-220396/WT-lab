@@ -3,7 +3,7 @@ session_start();
 
 // 1️⃣ Protect the page
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.html");
+    header("Location: /public/login.html");
     exit;
 }
 ?>
@@ -18,7 +18,7 @@ if (!isset($_SESSION['user_id'])) {
 <h2>Welcome, <?php echo $_SESSION['username']; ?> 👋</h2>
 
 <p>This is your TechBridge dashboard.</p>
-<a href="update_profile.html">
+<a href="/public/update_profile.html">
     <button>Update Profile</button>
 </a>
 
@@ -27,7 +27,7 @@ if (!isset($_SESSION['user_id'])) {
 
 <br>
 
-<a href="delete_account.php" 
+<a href="/user/delete_account.php" 
    onclick="return confirm('Are you sure you want to delete your account?');">
     <button style="color:red;">Delete Account</button>
 </a>
@@ -36,14 +36,14 @@ if (!isset($_SESSION['user_id'])) {
 
 <br>
 
-<a href="list_users.php">
+<a href="/user/list_users.php">
     <button>View All Users</button>
 </a>
 
 <br>
 
 <br>
-<a href="logout.php">Logout</a>
+<a href="/auth/logout.php">Logout</a>
 
 </body>
 </html>

@@ -1,3 +1,4 @@
+/* copied style.css into public */
 body{
   color:#f9fafb;
   text-shadow:0 2px 6px rgba(0, 0, 0, 0.75);;
@@ -117,7 +118,6 @@ body{
   z-index: -1;
 }
 
-/* media queries */
 @media (max-width:768px) {
   .navbar{
     flex-direction:column;

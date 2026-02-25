@@ -1,3 +1,4 @@
+/* copied signupstyle.css */
 body{
     background-color: #b2bbd3;
     font-family: 'Open Sans', sans-serif;
@@ -11,7 +12,6 @@ body{
     padding: 15px 40px;
     background-color: white;
     border-radius: 10px;
-    
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }  
 
@@ -85,7 +85,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 30px;
 }
 
 .card{
@@ -121,11 +121,10 @@ form input{
 .btn{
     padding : 6px 12px;
     color: white;
-    font-size: 50x;
     background-color: #2563eb;
     border : 1px solid #9cacaf;
     border-radius: 15px;
-    margin-left:160px;
+    margin-left:130px;
     cursor: pointer;
     margin-top:8px
 }
@@ -135,7 +134,7 @@ form input{
     color: #2563eb;
     background-color: white;
     border-radius: 15px;
-    margin-left: 160px;
+    margin-left: 130px;
 }
 
 .login-text{

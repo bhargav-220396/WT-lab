@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db.php";
+require __DIR__ . '/../config/db.php';
 
 // Protect page (only logged-in users can view)
 if (!isset($_SESSION['user_id'])) {
@@ -36,7 +36,7 @@ $allUsers = $users->find();
 </table>
 
 <br>
-<a href="dashboard.php">Back to Dashboard</a>
+<a href="/user/dashboard.php">Back to Dashboard</a>
 
 </body>
 </html>

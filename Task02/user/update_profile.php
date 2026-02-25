@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db.php";
+require __DIR__ . '/../config/db.php';
 
 // Protect page
 if (!isset($_SESSION['user_id'])) {
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $updateResult = $users->updateOne(
-            ['_id' => new MongoDB\BSON\ObjectId($_SESSION['user_id'])],
+            ['_id' => new MongoDB\\BSON\\ObjectId($_SESSION['user_id'])],
             ['$set' => [
                 'service' => $newService,
                 'budget' => $newBudget
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "No changes made.<br><br>";
         }
 
-        echo '<a href="dashboard.php">Back to Dashboard</a>';
+        echo '<a href="/user/dashboard.php">Back to Dashboard</a>';
 
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();

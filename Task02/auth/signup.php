@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+include __DIR__ . '/../config/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -37,14 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // 4. Insert into database
-    // Check if user already exists
-    // $existingUser = $users->findOne(['username' => $username]);
-
-    // if ($existingUser) {
-    //     die("User already exists");
-    // }
-
-    // Insert into MongoDB
     try {
 
     $insertResult = $users->insertOne([
@@ -52,12 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'password' => $hashed_password,
         'service' => $service,
         'budget' => $budget,
-        'createdAt' => new MongoDB\BSON\UTCDateTime()
+        'createdAt' => new MongoDB\\BSON\\UTCDateTime()
     ]);
 
     echo "Signup successful!";
 
-    } catch (MongoDB\Driver\Exception\Exception $e) {
+    } catch (MongoDB\\Driver\\Exception\\Exception $e) {
 
         if (str_contains($e->getMessage(), 'duplicate')) {
             echo "Username already exists!";

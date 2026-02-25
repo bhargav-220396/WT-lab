@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db.php";
+require __DIR__ . '/../config/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['user_id'] = (string) $user['_id'];   // MongoDB ObjectId
     $_SESSION['username'] = $user['username'];
 
-    header("Location: dashboard.php");
+    header("Location: /user/dashboard.php");
     exit;
 }
 ?>
