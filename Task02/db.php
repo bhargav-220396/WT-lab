@@ -1,13 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "techbridge";
-$port = 3307;
 
-$conn = mysqli_connect($servername, $username, $password, $database, $port);
+require __DIR__ . '/vendor/autoload.php';
 
-if (!$conn) {
-    die("Database connection failed");
-}
+$client = new MongoDB\Client("mongodb://localhost:27017");
+
+$db = $client->TechBridge;   // database name
+$users = $db->users;         // collection name
+
 ?>

@@ -1,10 +1,6 @@
 <?php
-// echo "<pre>";
-// print_r($_POST);
-// echo "</pre>";
-
-session_start();          
-include "db.php";         
+session_start();
+require "db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -15,27 +11,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Username or password missing");
     }
 
-    $sql = "SELECT * FROM users WHERE username = '$username'";
-    $result = mysqli_query($conn, $sql);
+    // Find user in MongoDB
+    $user = $users->findOne(['username' => $username]);
 
-    if (mysqli_num_rows($result) == 1) {
-
-        $user = mysqli_fetch_assoc($result);
-
-        if (password_verify($password, $user['password'])) {
-
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-
-            header("Location: dashboard.php");
-            exit;
-
-        } else {
-            echo "Invalid password";
-        }
-
-    } else {
-        echo "User not found";
+    if (!$user) {
+        die("User not found");
     }
+
+    // Verify password
+    if (!password_verify($password, $user['password'])) {
+        die("Invalid password");
+    }
+
+    // Login success
+    $_SESSION['user_id'] = (string) $user['_id'];   // MongoDB ObjectId
+    $_SESSION['username'] = $user['username'];
+
+    header("Location: dashboard.php");
+    exit;
 }
 ?>

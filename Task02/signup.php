@@ -37,16 +37,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     // 4. Insert into database
-    $sql = "INSERT INTO users (username, password, service, budget)
-            VALUES ('$username', '$hashed_password', '$service', '$budget')";
+    // Check if user already exists
+    // $existingUser = $users->findOne(['username' => $username]);
 
-    if (mysqli_query($conn, $sql)) {
+    // if ($existingUser) {
+    //     die("User already exists");
+    // }
+
+    // Insert into MongoDB
+    try {
+
+    $insertResult = $users->insertOne([
+        'username' => $username,
+        'password' => $hashed_password,
+        'service' => $service,
+        'budget' => $budget,
+        'createdAt' => new MongoDB\BSON\UTCDateTime()
+    ]);
+
+    echo "Signup successful!";
+
+    } catch (MongoDB\Driver\Exception\Exception $e) {
+
+        if (str_contains($e->getMessage(), 'duplicate')) {
+            echo "Username already exists!";
+        } else {
+            echo "Database error occurred.";
+        }
+    }
+
+    if ($insertResult->getInsertedCount() === 1) {
         echo "Signup successful!";
     } else {
         echo "Error occurred";
     }
 
-} else {
-    echo "Invalid request";
-}
+    } else {
+        echo "Invalid request";
+    }
 ?>
