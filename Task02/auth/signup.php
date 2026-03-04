@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'password' => $hashed_password,
         'service' => $service,
         'budget' => $budget,
-        'createdAt' => new MongoDB\\BSON\\UTCDateTime()
+        //'createdAt' => new MongoDB\\BSON\\UTCDateTime()
     ]);
 
     echo "Signup successful!";
